@@ -32,6 +32,10 @@ span.logo {
   justify-content: center;
 }
 
+span.logo h2{
+  margin: 10px 0;
+}
+
 span.logo i {
   color: blue;
 }
@@ -69,6 +73,13 @@ i {
   transition: 0.3s;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.sidebar .nav a:active {
+  background-color: blue;
+  color: white;
+  transition: 0.3s;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
 /* sidebar end */
 
 /* konten mulai dari sini */
@@ -79,6 +90,7 @@ i {
 }
 
 .content form {
+  margin: 10px 0;
   display: flex;
   align-items: center;
 }
@@ -101,11 +113,25 @@ i {
   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
   border-radius: 0 50px 50px 0;
   color: black;
-  background-color: #bab5b5;
+  background-color: lightgrey;
 }
 
 .content form button:hover {
-  background-color: rgb(122, 120, 120);
+  opacity: 0.7;
   transition: 0.2s;
 }
+
+/* form a{
+  color: black;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+form a:hover{
+  background-color: grey;
+  color: white;
+} */
+
 /* konten end */

@@ -20,11 +20,11 @@
         <div class="container">
             <span class="logo"><h2><i class="bi bi-activity"></i>RS Global</h2></span>
             <div class="nav">
-                <a href="#" style="background-color: blue; color:white;"><i class="bi bi-house"></i> Beranda</a>
+                <a href="index.php"><i class="bi bi-house"></i> Beranda</a>
                 <a href="inventaris.php"><i class="bi bi-backpack4"></i> Inventaris</a>
                 <a href="medis.php"><i class="bi bi-heart-pulse"></i> Medis</a>
                 <a href="nonmedis.php"><i class="bi bi-motherboard"></i> Non Medis</a>
-                <a href="log.php"><i class="bi bi-journal-medical"></i> Log</a>
+                <a href="log.php" style="background-color: blue; color:white;"><i class="bi bi-journal-medical"></i> Log</a>
                 <a href="pengaturan.php"><i class="bi bi-gear"></i> Pengaturan</a>
             </div>
         </div>
@@ -35,8 +35,8 @@
                 <input type="text" name="search" placeholder="Search...">
                 <button type="submit">
                     <i class="bi bi-search"></i>
-                </button>            
-            </form>    
+                </button>
+            </form>
         </div>
     </div>
 </body>
