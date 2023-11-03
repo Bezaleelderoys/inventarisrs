@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2023 at 11:18 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: Nov 03, 2023 at 10:52 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,7 +35,7 @@ CREATE TABLE `barang_medis` (
   `satuan` varchar(50) NOT NULL,
   `jumlah` int(11) NOT NULL,
   `kondisi` char(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -49,7 +50,17 @@ CREATE TABLE `barang_nonmedis` (
   `satuan` varchar(50) NOT NULL,
   `jumlah` int(11) NOT NULL,
   `kondisi` char(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `barang_nonmedis`
+--
+
+INSERT INTO `barang_nonmedis` (`no`, `nama`, `merk`, `satuan`, `jumlah`, `kondisi`) VALUES
+(1, 'monitor', 'LENOVO L24i-40', 'unit', 32, 'A'),
+(2, 'keyboard', 'Logitech K120', 'unit', 44, 'A'),
+(3, 'mouse', 'LOGITECH B100', 'unit', 58, 'A'),
+(4, 'printer', 'Canon PIXMA MG2570S', 'unit', 11, 'A');
 
 --
 -- Indexes for dumped tables
@@ -81,7 +92,7 @@ ALTER TABLE `barang_medis`
 -- AUTO_INCREMENT for table `barang_nonmedis`
 --
 ALTER TABLE `barang_nonmedis`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

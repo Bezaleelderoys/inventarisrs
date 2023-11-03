@@ -1,6 +1,7 @@
 <?php
     include_once("koneksi.php");
 
+    $query = mysqli_query($koneksi, "SELECT * FROM barang_nonmedis");
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +38,28 @@
                     <i class="bi bi-search"></i>
                 </button>
             </form>
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Merk</th>
+                    <th>Satuan</th>
+                    <th>Jumlah</th>
+                    <th>Kondisi</th>
+                </tr>
+            <?php
+                while($data = mysqli_fetch_array($query)){
+                    echo "<tr>";
+                    echo "<td>".$data['no']."</td>";
+                    echo "<td>".$data['nama']."</td>";
+                    echo "<td>".$data['merk']."</td>";
+                    echo "<td>".$data['satuan']."</td>";
+                    echo "<td>".$data['jumlah']."</td>";
+                    echo "<td>".$data['kondisi']."</td>";
+                    echo "</tr>";
+                }
+            ?>
+            </table>
         </div>
     </div>
 </body>

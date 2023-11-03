@@ -31,12 +31,6 @@
     </div>
     <div class="content">
         <div class="container">
-            <form>
-                <input type="text" name="search" placeholder="Search...">
-                <button type="submit">
-                    <i class="bi bi-search"></i>
-                </button>            
-            </form>    
         </div>
     </div>
 </body>

@@ -102,7 +102,9 @@ i {
   border: none;
   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
   border-radius: 50px 0 0 50px;
+  outline: none;
 }
+
 
 .content form button {
   height: 40px;
