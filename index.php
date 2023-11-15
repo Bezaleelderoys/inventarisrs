@@ -18,14 +18,12 @@
 <body>
     <div class="navbar">
         <div class="container">
-            <div class="nav-items">
                 <form action="">
-                    <i class="bi bi-search"></i><input type="text" name="" id="" placeholder="Search...">
+                    <i class="bi bi-search"></i><input type="text" name="" id="" placeholder="Cari...">
                 </form>
-                <a href="#"><i class="bi bi-bell"></i></a>
+                <a href="#"><i class="bi bi-bell-fill" id="bell"></i></a>
                 <img src="img/profile.jpg" alt="">
                 <a href="#"> Admin <i class="bi bi-chevron-down"></i></a>
-            </div>
         </div>
     </div>
     <div class="sidebar">
@@ -43,6 +41,57 @@
     </div>
     <div class="content">
         <div class="container">
+            <div class="card">
+                <div class="icon">
+                    <i class="bi bi-archive-fill"></i>
+                </div>
+                <div class="text-box">
+                    <h2>2505</h2>
+                    <p>Total Barang</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon1">
+                    <i class="bi bi-archive-fill"></i>
+                </div>
+                <div class="text-box">
+                    <h2>2505</h2>
+                    <p>Total Barang</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon2">
+                    <i class="bi bi-archive-fill"></i>
+                </div>
+                <div class="text-box">
+                    <h2>2505</h2>
+                    <p>Total Barang</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon3">
+                    <i class="bi bi-archive-fill"></i>
+                </div>
+                <div class="text-box">
+                    <h2>2505</h2>
+                    <p>Total Barang</p>
+                </div>
+            </div>
+        </div>
+        <div class="big-card">
+                <div class="title">
+                    <p>Inventaris</p>
+                    <a href="inventaris.php">Lihat lebih..</a>
+                </div>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
         </div>
     </div>
 </body>
