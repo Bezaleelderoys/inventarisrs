@@ -1,6 +1,8 @@
 <?php
     include_once("koneksi.php");
 
+    $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
+
 ?>
 
 <!DOCTYPE html>
@@ -30,12 +32,10 @@
         <div class="container">
             <span class="logo"><h2><i class="bi bi-activity"></i>RS Global</h2></span>
             <div class="nav">
-                <a href="#" style="background-color: blue; color:white;"><i class="bi bi-house"></i> Beranda</a>
-                <a href="inventaris.php"><i class="bi bi-backpack4"></i> Inventaris</a>
-                <a href="medis.php"><i class="bi bi-heart-pulse"></i> Medis</a>
-                <a href="nonmedis.php"><i class="bi bi-motherboard"></i> Non Medis</a>
-                <a href="log.php"><i class="bi bi-journal-medical"></i> Log</a>
-                <a href="pengaturan.php"><i class="bi bi-gear"></i> Pengaturan</a>
+                <a href="#" style="opacity: 1;"><i class="bi bi-house-door-fill" style="color: #713bdb;"></i> Beranda</a>
+                <a href="inventaris.php"><i class="bi bi-backpack-fill"></i> Inventaris</a>
+                <a href="log.php"><i class="bi bi-book-fill"></i> Log</a>
+                <a href="pengaturan.php"><i class="bi bi-gear-fill"></i> Pengaturan</a>
             </div>
         </div>
     </div>
@@ -85,12 +85,23 @@
                 </div>
                 <table>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th>ID</th>
+                        <th>Nama Barang</th>
+                        <th>Merk Barang</th>
+                        <th>Jenis</th>
+                        <th>Jumlah</th>
                     </tr>
+                    <?php   
+
+                        while ($data = mysqli_fetch_array($query)){
+                            echo "<tr>";
+                            echo "<td>".$data['ID_BARANG']."</td>";  
+                            echo "<td>".$data['NAMA_BARANG']."</td>";  
+                            echo "<td>".$data['MERK_BARANG']."</td>";  
+                            echo "<td>".$data['JENIS_BARANG']."</td>";  
+                            echo "<td>".$data['JUMLAH']."</td>";  
+                        }
+                    ?>
                 </table>
         </div>
     </div>

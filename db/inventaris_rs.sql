@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2023 at 10:52 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Nov 16, 2023 at 11:17 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,74 +24,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang_medis`
+-- Table structure for table `barang`
 --
 
-CREATE TABLE `barang_medis` (
-  `no` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `merk` varchar(50) NOT NULL,
-  `satuan` varchar(50) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `kondisi` char(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
+CREATE TABLE `barang` (
+  `ID_BARANG` int(11) NOT NULL,
+  `NAMA_BARANG` varchar(255) NOT NULL,
+  `MERK_BARANG` varchar(255) NOT NULL,
+  `JENIS_BARANG` varchar(255) NOT NULL,
+  `JUMLAH` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Table structure for table `barang_nonmedis`
+-- Dumping data for table `barang`
 --
 
-CREATE TABLE `barang_nonmedis` (
-  `no` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `merk` varchar(50) NOT NULL,
-  `satuan` varchar(50) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `kondisi` char(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `barang_nonmedis`
---
-
-INSERT INTO `barang_nonmedis` (`no`, `nama`, `merk`, `satuan`, `jumlah`, `kondisi`) VALUES
-(1, 'monitor', 'LENOVO L24i-40', 'unit', 32, 'A'),
-(2, 'keyboard', 'Logitech K120', 'unit', 44, 'A'),
-(3, 'mouse', 'LOGITECH B100', 'unit', 58, 'A'),
-(4, 'printer', 'Canon PIXMA MG2570S', 'unit', 11, 'A');
+INSERT INTO `barang` (`ID_BARANG`, `NAMA_BARANG`, `MERK_BARANG`, `JENIS_BARANG`, `JUMLAH`) VALUES
+(1, 'MASKER', 'KN95', 'MEDIS', 342),
+(2, 'UV STERILISATOR', 'BEKO', 'MEDIS', 20),
+(3, 'LAMPU PERIKSA', 'SERENITY', 'NON MEDIS', 33),
+(4, 'HEMATOLOGY ANALYZER', 'SYSMEX XP-100', 'MEDIS', 15),
+(5, 'MESIN ANESTESI', 'VAPORIZER AM 831', 'MEDIS', 7),
+(6, 'ULTRASONOGRAFI', 'SURESUN', 'MEDIS', 50),
+(7, 'INKUBATOR BAYI', 'GEA YP 100', 'MEDIS', 12),
+(8, 'INFUS SET', 'GEA ONEMED', 'MEDIS', 223),
+(9, 'KURSI RODA', 'GEA MEDICALWHEEL CHAIR', 'NON MEDIS', 18),
+(10, 'ALAT TEST GULA DARAH', 'ACCU-ACTIVE PACK', 'MEDIS', 23),
+(11, 'MONITOR', 'AOC', 'NON MEDIS', 46),
+(12, 'MOUSE', 'LOGITECH', 'NON MEDIS', 57),
+(13, 'KEYBOARD', 'LOGITECH', 'NON MEDIS', 40),
+(14, 'COMPUTER', 'DELL OPTIPLEX', 'NON MEDIS', 123),
+(15, 'PRINTER', 'CANON', 'NON MEDIS', 28);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `barang_medis`
+-- Indexes for table `barang`
 --
-ALTER TABLE `barang_medis`
-  ADD PRIMARY KEY (`no`);
-
---
--- Indexes for table `barang_nonmedis`
---
-ALTER TABLE `barang_nonmedis`
-  ADD PRIMARY KEY (`no`);
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`ID_BARANG`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `barang_medis`
+-- AUTO_INCREMENT for table `barang`
 --
-ALTER TABLE `barang_medis`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `barang_nonmedis`
---
-ALTER TABLE `barang_nonmedis`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `barang`
+  MODIFY `ID_BARANG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
