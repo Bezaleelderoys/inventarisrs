@@ -4,7 +4,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  width: 100%;
+  max-width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -18,55 +18,61 @@ body {
 }
 
 /* navbnar */
-.navbar{
+.navbar {
   width: 100%;
   margin-left: 300px;
   height: 80px;
   background-color: #fff;
   position: fixed;
   display: flex;
-  align-items: center;  
+  align-items: center;
   z-index: 1;
 }
 
-.navbar .container{
-  width: 100%;
-  gap: 10px;
+.navbar .container {
+  max-width: 100%;
+  width: 77%;
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
 }
 
-.navbar .container img{
+.navbar .container img {
   height: 40px;
   width: 40px;
   border-radius: 50%;
 }
 
-.navbar .container input[type='text']{
+.navbar .container input[type="text"] {
   height: 60px;
   width: 400px;
   font-size: 15px;
   border: none;
   outline: none;
-  margin-right: 60rem;
 }
 
-#bell{
+.navbar .container .right {
+  display: flex;
+  align-items: center;
+  float: right;
+  gap: 10px;
+}
+
+#bell {
   font-size: 20px;
 }
 
-.navbar a{
+.navbar a {
   color: black;
   opacity: 0.7;
   text-decoration: none;
 }
 
-.navbar a:hover{
+.navbar a:hover {
   opacity: 1;
 }
 
-.navbar a:active{
+.navbar a:active {
   opacity: 0.8;
 }
 
@@ -109,7 +115,9 @@ span.logo i {
   display: flex;
 }
 
-.sidebar i, form i, .navbar i {
+.sidebar i,
+form i,
+.navbar i {
   margin-right: 10px;
 }
 
@@ -118,7 +126,7 @@ span.logo i {
   transition: 0.3s;
 }
 
-.sidebar .nav a:hover i{
+.sidebar .nav a:hover i {
   color: #713bdb;
 }
 
@@ -151,7 +159,6 @@ span.logo i {
   outline: none;
 }
 
-
 .content form button {
   height: 40px;
   width: 50px;
@@ -169,12 +176,13 @@ span.logo i {
   transition: 0.2s;
 }
 
-.content .container{
+.content .container {
   display: flex;
   align-items: center;
+  overflow: auto;
 }
 
-.card{
+.card {
   background-color: white;
   border-radius: 5px;
   display: flex;
@@ -187,7 +195,7 @@ span.logo i {
   gap: 30px;
 }
 
-.icon{
+.icon {
   height: 50px;
   width: 50px;
   align-items: center;
@@ -197,10 +205,10 @@ span.logo i {
   color: #723adb;
   border-radius: 50%;
   font-size: 20px;
-  justify-content: center ;
+  justify-content: center;
 }
 
-.icon1{
+.icon1 {
   height: 50px;
   width: 50px;
   align-items: center;
@@ -210,10 +218,10 @@ span.logo i {
   color: #4ab9ff;
   border-radius: 50%;
   font-size: 20px;
-  justify-content: center ;
+  justify-content: center;
 }
 
-.icon2{
+.icon2 {
   height: 50px;
   width: 50px;
   align-items: center;
@@ -223,10 +231,10 @@ span.logo i {
   color: #ff8b58;
   border-radius: 50%;
   font-size: 20px;
-  justify-content: center ;
+  justify-content: center;
 }
 
-.icon3{
+.icon3 {
   height: 50px;
   width: 50px;
   align-items: center;
@@ -236,26 +244,27 @@ span.logo i {
   color: #fd517f;
   border-radius: 50%;
   font-size: 20px;
-  justify-content: center ;
+  justify-content: center;
 }
-.text-box{
+.text-box {
   text-align: start;
 }
 
-.text-box h2, .text-box p{
+.text-box h2,
+.text-box p {
   margin: 0;
 }
 
-.big-card{
+.big-card {
   margin: 20px 45px 0 60px;
   border: 1px solid #d8d8d8;
-  border-radius: 5px;  
+  border-radius: 5px;
   width: 1080px;
   height: 300px;
   background-color: white;
 }
 
-.big-card .title{
+.big-card .title {
   width: 100%;
   border-bottom: 1px solid #d8d8d8;
   border-radius: 5px 5px 0 0;
@@ -267,17 +276,28 @@ span.logo i {
   justify-content: space-between;
 }
 
-.title p{
+.title p {
   font-weight: bold;
 }
 
-.title a{
+.title a {
   color: black;
 }
 
 /* table */
-.big-card table{
-  width: 100%;
-  text-align: center;
+.big-card table {
+  width: 99%;
   font-size: 20px;
+}
+
+.big-card th {
+  text-align: center;
+}
+
+.big-card td {
+  text-indent: 10px;
+}
+
+.big-card .num {
+  text-align: right;
 }
