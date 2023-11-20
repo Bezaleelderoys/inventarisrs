@@ -4,11 +4,13 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  max-width: 100%;
+  width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #eee;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 /* global container */
@@ -24,16 +26,19 @@ body {
   height: 80px;
   background-color: #fff;
   position: fixed;
+  top: 0;
   display: flex;
   align-items: center;
   z-index: 1;
+  max-width: 100%;
+  /* justify-content: space-between */
 }
 
 .navbar .container {
-  max-width: 100%;
-  width: 77%;
+  width: 75%;
   display: flex;
   align-items: center;
+  position: fixed;
   justify-content: space-between;
 }
 
@@ -45,17 +50,10 @@ body {
 
 .navbar .container input[type="text"] {
   height: 60px;
-  width: 400px;
+  width: 500px;
   font-size: 15px;
   border: none;
   outline: none;
-}
-
-.navbar .container .right {
-  display: flex;
-  align-items: center;
-  float: right;
-  gap: 10px;
 }
 
 #bell {
@@ -76,6 +74,13 @@ body {
   opacity: 0.8;
 }
 
+.navbar .container .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 /* sidebar mulai disini */
 .sidebar {
   display: flex;
@@ -87,6 +92,7 @@ body {
   font-size: 20px;
   margin: 0;
   padding: 0;
+  top: 0;
 }
 
 span.logo {
@@ -137,7 +143,6 @@ form i,
 
 /* konten mulai dari sini */
 .content {
-  position: fixed;
   width: 100%;
   margin-left: 300px;
   margin-top: 80px;
@@ -179,7 +184,6 @@ form i,
 .content .container {
   display: flex;
   align-items: center;
-  overflow: auto;
 }
 
 .card {
@@ -286,18 +290,26 @@ form i,
 
 /* table */
 .big-card table {
-  width: 99%;
+  width: 100%;
   font-size: 20px;
 }
 
-.big-card th {
-  text-align: center;
+.big-card table tr:nth-child(even) {
+  background-color: rgb(221, 221, 221);
 }
 
-.big-card td {
-  text-indent: 10px;
-}
+/* responsivenss */
+@media (max-width: 1366px) {
+  .card {
+    width: 433px;
+  }
 
-.big-card .num {
-  text-align: right;
+  .content .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .big-card {
+    width: 957px;
+  }
 }
