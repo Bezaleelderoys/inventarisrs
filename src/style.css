@@ -22,20 +22,19 @@ body {
 /* navbnar */
 .navbar {
   width: 100%;
-  margin-left: 300px;
   height: 80px;
   background-color: #fff;
   position: fixed;
   top: 0;
   display: flex;
   align-items: center;
-  z-index: 1;
   max-width: 100%;
   /* justify-content: space-between */
 }
 
 .navbar .container {
   width: 75%;
+  margin-left: 300px;
   display: flex;
   align-items: center;
   position: fixed;
@@ -264,7 +263,7 @@ form i,
   border: 1px solid #d8d8d8;
   border-radius: 5px;
   width: 1080px;
-  height: 300px;
+  height: 280px;
   background-color: white;
 }
 
@@ -295,7 +294,15 @@ form i,
 }
 
 .big-card table tr:nth-child(even) {
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(239, 239, 239);
+}
+
+.big-card table tr:nth-child(odd):hover {
+  background-color: rgb(231, 231, 231);
+}
+
+.big-card table tr:nth-child(even):hover {
+  background-color: #e6e6e6;
 }
 
 /* responsivenss */
