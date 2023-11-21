@@ -32,7 +32,7 @@
     </div>
     <div class="sidebar">
         <div class="container">
-            <span class="logo"><h2><i class="bi bi-activity"></i>RS Global</h2></span>
+            <span class="logo"><h3><i class="bi bi-activity"></i>RS Global</h3></span>
             <div class="nav">
                 <a href="#" style="opacity: 1;"><i class="bi bi-house-door-fill" style="color: #713bdb;"></i> Beranda</a>
                 <a href="inventaris.php"><i class="bi bi-backpack-fill"></i> Inventaris</a>
@@ -80,7 +80,8 @@
                 </div>
             </div>
         </div>
-        <div class="big-card">
+        <div class="wrapper">
+            <div class="big-card">
                 <div class="title">
                     <p>Inventaris</p>
                     <a href="inventaris.php">Lihat lebih..</a>
@@ -92,6 +93,7 @@
                         <th>Merk Barang</th>
                         <th>Jenis</th>
                         <th>Jumlah</th>
+                        <th>Kondisi</th>
                     </tr>
                     <?php   
 
@@ -102,9 +104,17 @@
                             echo "<td>".$data['MERK_BARANG']."</td>";  
                             echo "<td>".$data['JENIS_BARANG']."</td>";  
                             echo "<td>".$data['JUMLAH']."</td>";  
+                            echo "<td>".$data['KONDISI']."</td>";  
                         }
                     ?>
                 </table>
+            </div>
+            <div class="right-card">
+            <div class="title">
+                <p>Log</p>
+                <a href="log.php">Lihat lebih..</a>
+            </div>
+            </div>
         </div>
     </div>
 </body>
