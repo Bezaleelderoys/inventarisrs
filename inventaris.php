@@ -1,12 +1,13 @@
 <?php
-    include_once("koneksi.php");
+include_once("koneksi.php");
 
-    $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
+$query = mysqli_query($koneksi, "SELECT * FROM barang");
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,33 +18,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="navbar">
         <div class="container">
-                <form action="">
-                    <i class="bi bi-search"></i><input type="text" name="" id="" placeholder="Cari...">
-                </form>
-                <div class="social">
-                    <a href="#"><i class="bi bi-bell-fill" id="bell"></i></a>
-                    <img src="img/profile.jpg" alt="">
-                    <a href="#"> Admin <i class="bi bi-chevron-down"></i></a>
-                </div>
+            <form action="">
+                <i class="bi bi-search"></i><input type="text" name="" id="" placeholder="Cari...">
+            </form>
+            <div class="social">
+                <a href="#"><i class="bi bi-bell-fill" id="bell"></i></a>
+                <img src="img/profile.jpg" alt="">
+                <a href="#"> Admin <i class="bi bi-chevron-down"></i></a>
+            </div>
         </div>
     </div>
     <div class="sidebar">
         <div class="container">
-            <span class="logo"><h3><i class="bi bi-activity"></i>RS Global</h3></span>
+            <span class="logo">
+                <h3><i class="bi bi-activity"></i>RS Global</h3>
+            </span>
             <div class="nav">
                 <a href="index.php"><i class="bi bi-house-door-fill"></i> Beranda</a>
-                <a href="inventaris.php" style="opacity: 1;"><i class="bi bi-backpack-fill"  style="color: #713bdb;"></i> Inventaris</a>
+                <a href="inventaris.php" style="opacity: 1;"><i class="bi bi-backpack-fill" style="color: #713bdb;"></i>
+                    Inventaris</a>
                 <a href="log.php"><i class="bi bi-book-fill"></i> Log</a>
                 <a href="pengaturan.php"><i class="bi bi-gear-fill"></i> Pengaturan</a>
             </div>
         </div>
     </div>
-    <div class="content">
+    <div class="inventory">
+        <div class="upper-con">
+            <form action="">
+                <input type="text" name="" placeholder="Cari..">
+                <button>Cari</button>
+            </form>
+            <select name="filter">
+                <option>Filter</option>
+                <option value="medis">Medis</option>
+                <option value="nonmedis">Non Medis</option>
+            </select>
+        </div>
         <div class="container">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>NAMA</th>
+                    <th>MERK</th>
+                    <th>JENIS</th>
+                    <th>JUMLAH</th>
+                    <th>KONDISI</th>
+                </tr>
+                <?php
+                while ($data = mysqli_fetch_array($query)) {
+                    echo "<tr>";
+                    echo "<td>" . $data['ID_BARANG'] . "</td>";
+                    echo "<td>" . $data['NAMA_BARANG'] . "</td>";
+                    echo "<td>" . $data['MERK_BARANG'] . "</td>";
+                    echo "<td>" . $data['JENIS_BARANG'] . "</td>";
+                    echo "<td>" . $data['JUMLAH'] . "</td>";
+                    echo "<td>" . $data['KONDISI'] . "</td>";
+                }
+                ?>
+            </table>
         </div>
     </div>
 </body>
+
 </html>

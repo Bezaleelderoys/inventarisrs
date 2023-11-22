@@ -163,16 +163,6 @@ form i,
   align-items: center;
 }
 
-.content form input[type="text"] {
-  padding: 15px;
-  height: 40px;
-  width: 350px;
-  border: none;
-  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
-  border-radius: 50px 0 0 50px;
-  outline: none;
-}
-
 .content form button {
   height: 40px;
   width: 50px;
@@ -318,14 +308,14 @@ form i,
 }
 
 .big-card table tr td {
-  color: rgb(110, 110, 110);
+  color: rgb(49, 49, 49);
 }
 
 /* log kanan */
 .right-card {
   border: 1px solid #d8d8d8;
   border-radius: 5px;
-  width: 26%;
+  width: 24%;
   height: 280px;
   background-color: white;
 }
@@ -345,9 +335,29 @@ form i,
 /* wrapperr */
 .wrapper {
   display: flex;
-  gap: 7px;
+  gap: 35px;
   margin-left: 16px;
 }
+
+/* inventory mulai dari sini */
+.inventory {
+  width: 100%;
+  margin-left: 14rem;
+  margin-top: 80px;
+}
+
+.inventory .container {
+  display: flex;
+  align-items: center;
+}
+
+.upper-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+/* inventory end */
 
 /* Responsiveness */
 @media (max-width: 1366px) {
@@ -355,4 +365,16 @@ form i,
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+/* sembunyiin scrollbar */
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
