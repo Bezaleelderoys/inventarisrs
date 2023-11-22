@@ -357,6 +357,15 @@ form i,
   justify-content: space-between;
   width: 80%;
 }
+
+.upper-con input[type="text"] {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  height: 2rem;
+  width: 300px;
+  border: none;
+  outline: none;
+}
 /* inventory end */
 
 /* Responsiveness */
