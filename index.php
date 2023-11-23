@@ -94,11 +94,11 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
                 <table border="0" style="border-collapse: collapse;">
                     <tr>
                         <th>ID</th>
-                        <th>Nama Barang</th>
-                        <th>Merk Barang</th>
-                        <th>Jenis</th>
-                        <th>Jumlah</th>
-                        <th>Kondisi</th>
+                        <th>NAMA</th>
+                        <th>MERK</th>
+                        <th>JENIS</th>
+                        <th>JUMLAH</th>
+                        <th>KONDISI</th>
                     </tr>
                     <?php
 

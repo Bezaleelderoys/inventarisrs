@@ -194,7 +194,7 @@ form i,
   height: 100px;
   width: 20%;
   margin: 20px 15px 10px 0px;
-  border: 1px solid #d8d8d8;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
   gap: 30px;
 }
 
@@ -259,7 +259,7 @@ form i,
 }
 
 .big-card {
-  border: 1px solid #d8d8d8;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   width: 56%;
   height: 280px;
@@ -307,13 +307,9 @@ form i,
   background-color: #e6e6e6;
 }
 
-.big-card table tr td {
-  color: rgb(49, 49, 49);
-}
-
 /* log kanan */
 .right-card {
-  border: 1px solid #d8d8d8;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   width: 24%;
   height: 280px;
@@ -365,6 +361,78 @@ form i,
   width: 300px;
   border: none;
   outline: none;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+.upper-con button[type="submit"]:hover {
+  opacity: 0.8;
+}
+.upper-con select {
+  height: 2rem;
+  outline: none;
+  border: none;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.upper-con option {
+  height: 2rem;
+  outline: none;
+  border: none;
+}
+
+.container table {
+  background-color: white;
+  width: 70%;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.container table tr {
+  height: 2.7rem;
+}
+
+.container table tr td {
+  padding: 1em;
+}
+
+.button {
+  text-align: center;
+}
+
+.container table tr:nth-child(even) {
+  background-color: #f7f6f6;
+}
+
+.del {
+  background-color: red;
+  border: none;
+  color: white;
+  height: 30px;
+  width: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.edit {
+  background-color: blue;
+  border: none;
+  color: white;
+  height: 30px;
+  width: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.del:hover,
+.edit:hover {
+  opacity: 0.9;
+}
+
+.del:active,
+.edit:active {
+  opacity: 1;
 }
 /* inventory end */
 

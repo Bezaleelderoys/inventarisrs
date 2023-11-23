@@ -1,8 +1,5 @@
 <?php
 include_once("koneksi.php");
-
-$query = mysqli_query($koneksi, "SELECT * FROM barang");
-
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +19,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang");
 <body>
     <div class="navbar">
         <div class="container">
-            <form action="">
+            <form action="post">
                 <i class="bi bi-search"></i><input type="text" name="" id="" placeholder="Cari...">
             </form>
             <div class="social">
@@ -39,8 +36,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang");
             </span>
             <div class="nav">
                 <a href="index.php"><i class="bi bi-house-door-fill"></i> Beranda</a>
-                <a href="inventaris.php" style="opacity: 1;"><i class="bi bi-backpack-fill" style="color: #713bdb;"></i>
-                    Inventaris</a>
+                <a href="inventaris.php" style="opacity: 1;"><i class="bi bi-backpack-fill" style="color: #713bdb;"></i>Inventaris</a>
                 <a href="log.php"><i class="bi bi-book-fill"></i> Log</a>
                 <a href="pengaturan.php"><i class="bi bi-gear-fill"></i> Pengaturan</a>
             </div>
@@ -48,9 +44,16 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang");
     </div>
     <div class="inventory">
         <div class="upper-con">
-            <form action="">
-                <input type="text" name="" placeholder="Cari..">
-                <button>Cari</button>
+            <form action="" method="post" name="form">
+                <input type="text" placeholder="Cari."name="keyword">
+                <button type="submit" name="cari" style="
+                    height: 2rem;
+                    border: none;
+                    outline: none;
+                    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+                    border-radius: 3px;
+                    cursor: pointer;
+                ">Cari!</button>
             </form>
             <select name="filter">
                 <option>Filter</option>
@@ -59,7 +62,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang");
             </select>
         </div>
         <div class="container">
-            <table>
+            <table border="1" style="border-collapse: collapse;">
                 <tr>
                     <th>ID</th>
                     <th>NAMA</th>
@@ -67,7 +70,16 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang");
                     <th>JENIS</th>
                     <th>JUMLAH</th>
                     <th>KONDISI</th>
+                    <th colspan="2">Actions</th>
                 </tr>
+                <?php
+                if(isset($_POST['cari'])){
+                    $cari = $_POST['keyword'];
+                    $query = mysqli_query($koneksi, "SELECT * FROM barang WHERE NAMA_BARANG LIKE '$cari%'");
+                }else{
+                    $query = mysqli_query($koneksi, "SELECT * FROM barang");
+                }
+                ?>
                 <?php
                 while ($data = mysqli_fetch_array($query)) {
                     echo "<tr>";
@@ -77,6 +89,8 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang");
                     echo "<td>" . $data['JENIS_BARANG'] . "</td>";
                     echo "<td>" . $data['JUMLAH'] . "</td>";
                     echo "<td>" . $data['KONDISI'] . "</td>";
+                    echo "<td class='button'><a href='delete.php'><button class='del'>Delete</button></a></td>";
+                    echo "<td class='button'><a href='edit.php'><button class='edit'>Edit</button></a></td>";
                 }
                 ?>
             </table>
