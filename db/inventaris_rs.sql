@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 05:33 PM
+-- Generation Time: Nov 23, 2023 at 04:47 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`ID_BARANG`, `NAMA_BARANG`, `MERK_BARANG`, `JENIS_BARANG`, `JUMLAH`, `KONDISI`) VALUES
-(1, 'MASKER', 'KN95', 'MEDIS', 342, 'BAIK'),
+(1, 'MASKER', 'KNF95', 'MEDIS', 322, 'BAIK'),
 (2, 'UV STERILISATOR', 'BEKO', 'MEDIS', 20, 'BAIK'),
 (3, 'LAMPU PERIKSA', 'SERENITY', 'NON MEDIS', 33, 'BAIK'),
 (4, 'HEMATOLOGY ANALYZER', 'SYSMEX XP-100', 'MEDIS', 15, 'BURUK'),
@@ -56,6 +56,24 @@ INSERT INTO `barang` (`ID_BARANG`, `NAMA_BARANG`, `MERK_BARANG`, `JENIS_BARANG`,
 (13, 'KEYBOARD', 'LOGITECH', 'NON MEDIS', 40, 'BURUK'),
 (14, 'COMPUTER', 'DELL OPTIPLEX', 'NON MEDIS', 123, 'BAIK'),
 (15, 'PRINTER', 'CANON', 'NON MEDIS', 28, 'BAIK');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`) VALUES
+('admin', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -75,7 +93,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `ID_BARANG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID_BARANG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
