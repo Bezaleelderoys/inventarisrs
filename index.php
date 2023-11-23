@@ -1,5 +1,8 @@
 <?php
 include_once("koneksi.php");
+ob_start();
+session_start();
+if(!isset($_SESSION['akun_id'])) header("location: login.php");
 
 $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
 
