@@ -1,5 +1,32 @@
 <?php
+$id = $_GET['ID'];
+
 include_once("koneksi.php");
+
+if (isset($_POST['update'])) {
+    $nama = $_POST['nama'];
+    $merk = $_POST['merk'];
+    $kondisi = $_POST['kondisi'];
+    $jumlah = $_POST['jumlah'];
+    $result = mysqli_query($koneksi, "UPDATE barang SET NAMA_BARANG='$nama', MERK_BARANG='$merk', KONDISI='$kondisi', JUMLAH='$kondisi' WHERE ID_BARANG=$id");
+
+    header("location: index.php");
+}
+ 
+?>
+
+<?php
+
+$result = mysqli_query($koneksi, "SELECT * FROM barang WHERE ID_BARANG=$id");
+
+while ($data_siswa = mysqli_fetch_array($result)) {
+    $nama = $data_siswa['NAMA_BARANG'];
+    $merk = $data_siswa['MERK_BARANG'];
+    $jenis = $data_siswa['JENIS_BARANG'];
+    $kondisi = $data_siswa['KONDISI'];
+    $jumlah = $data_siswa['JUMLAH'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +43,12 @@ include_once("koneksi.php");
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="
+position: fixed;
+">
+<div class="all" style="
+filter: blur(10x);
+-webkit-filter: blur(10px);">
     <div class="navbar">
         <div class="container">
             <form action="post">
@@ -92,6 +124,21 @@ include_once("koneksi.php");
             </table>
         </div>
     </div>
-</body>
+</div>
 
+<form action='' method="post" class="editform">
+    <label>Nama</label><a href="inventaris.php" style="float:right;"><i class="bi bi-x-lg"></i></a><br>
+    <input type="text" name="nama" value="<?php echo $nama;?>"><br>
+    <label>Merk</label><br>
+    <input type="text" name="nama" value="<?php echo $merk;?>"><br>
+    <label>Kondisi</label><br>
+    <input type="text" name="nama" value="<?php echo $kondisi;?>"><br>
+    <label>Jumlah</label><br>
+    <input type="text" name="nama" value="<?php echo $jumlah;?>"><br>
+    <label>Jenis</label><br>
+    <input type="text" name="nama" value="<?php echo $jenis;?>"><br>
+    <input type="hidden" name="id" value="<?php echo $_GET['ID']; ?>">
+    <input type="submit" name="update" value="UPDATE">
+</form>
+</body>
 </html>

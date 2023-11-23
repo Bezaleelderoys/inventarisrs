@@ -367,28 +367,24 @@ form i,
 .upper-con button[type="submit"]:hover {
   opacity: 0.8;
 }
-.upper-con select {
-  height: 2rem;
-  outline: none;
-  border: none;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-}
-
-.upper-con option {
-  height: 2rem;
-  outline: none;
-  border: none;
-}
 
 .container table {
   background-color: white;
-  width: 70%;
-  border-color: rgba(0, 0, 0, 0.3);
+  width: 82%;
+  border-collapse: collapse;
+  box-shadow: rgba(0, 0, 0, 0.3);
 }
 
 .container table tr {
   height: 2.7rem;
+}
+
+.container table tr:nth-child(odd):hover {
+  background-color: #f4f4f4;
+}
+
+.container table tr:nth-child(even):hover {
+  background-color: #f2ebfb;
 }
 
 .container table tr td {
@@ -435,6 +431,55 @@ form i,
   opacity: 1;
 }
 /* inventory end */
+
+/* editstyles */
+.editform {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+}
+
+.editform label {
+  font-size: 20px;
+}
+
+.editform input[type="text"] {
+  width: 100%;
+  outline: none;
+  height: 3em;
+  border: none;
+  background-color: #eee;
+  border-radius: 2px;
+  font-size: 15px;
+  margin-bottom: 0.7em;
+}
+
+.editform input[type="submit"] {
+  height: 3em;
+  width: 50%;
+  border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  float: right;
+  border-radius: 2px;
+}
+
+.editform input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+.editform input[type="submit"]:active {
+  opacity: 1;
+}
 
 /* Responsiveness */
 @media (max-width: 1366px) {
