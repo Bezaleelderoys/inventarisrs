@@ -48,7 +48,7 @@ include_once("koneksi.php");
                 <input type="text" placeholder="Cari."name="keyword">
                 <button type="submit" name="cari">Cari!</button>
             </form>
-            <a href="edit.php"><button>Tambah</button></a>
+            <a href="tambah.php"><button>Tambah</button></a>
         </div>
         <div class="container">
             <table>
@@ -78,7 +78,7 @@ include_once("koneksi.php");
                     echo "<td>" . $data['JENIS_BARANG'] . "</td>";
                     echo "<td>" . $data['JUMLAH'] . "</td>";
                     echo "<td>" . $data['KONDISI'] . "</td>";
-                    echo "<td class='button'><a href='delete.php'><button class='del'>Delete</button></a></td>";
+                    echo "<td class='button'><a href='delete.php?ID=$data[ID_BARANG]'><button class='del'>Delete</button></a></td>";
                     echo "<td class='button'><a href='edit.php?ID=$data[ID_BARANG]'><button class='edit'>Edit</button></a></td>";
                 }
                 ?>

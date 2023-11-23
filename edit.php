@@ -74,59 +74,9 @@ filter: blur(10x);
             </div>
         </div>
     </div>
-    <div class="inventory">
-        <div class="upper-con">
-            <form action="" method="post" name="form">
-                <input type="text" placeholder="Cari."name="keyword">
-                <button type="submit" name="cari" style="
-                    height: 2rem;
-                    border: none;
-                    outline: none;
-                    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
-                    border-radius: 3px;
-                    cursor: pointer;
-                ">Cari!</button>
-            </form>
-            <a href="edit.php">Tambah</a>
-        </div>
-        <div class="container">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>NAMA</th>
-                    <th>MERK</th>
-                    <th>JENIS</th>
-                    <th>JUMLAH</th>
-                    <th>KONDISI</th>
-                    <th colspan="2">Actions</th>
-                </tr>
-                <?php
-                if(isset($_POST['cari'])){
-                    $cari = $_POST['keyword'];
-                    $query = mysqli_query($koneksi, "SELECT * FROM barang WHERE NAMA_BARANG LIKE '$cari%'");
-                }else{
-                    $query = mysqli_query($koneksi, "SELECT * FROM barang");
-                }
-                ?>
-                <?php
-                while ($data = mysqli_fetch_array($query)) {
-                    echo "<tr>";
-                    echo "<td>" . $data['ID_BARANG'] . "</td>";
-                    echo "<td>" . $data['NAMA_BARANG'] . "</td>";
-                    echo "<td>" . $data['MERK_BARANG'] . "</td>";
-                    echo "<td>" . $data['JENIS_BARANG'] . "</td>";
-                    echo "<td>" . $data['JUMLAH'] . "</td>";
-                    echo "<td>" . $data['KONDISI'] . "</td>";
-                    echo "<td class='button'><a href='delete.php'><button class='del'>Delete</button></a></td>";
-                    echo "<td class='button'><a href='edit.php?ID=$data[ID_BARANG]'><button class='edit'>Edit</button></a></td>";
-                }
-                ?>
-            </table>
-        </div>
-    </div>
 </div>
-
 <form action='' method="post" class="editform">
+    <h3 style="margin:0;">Edit Data</h3>
     <label>Nama</label><a href="inventaris.php" style="float:right;"><i class="bi bi-x-lg"></i></a><br>
     <input type="text" name="nama" value="<?php echo $nama;?>"><br>
     <label>Merk</label><br>
