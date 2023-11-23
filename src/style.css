@@ -364,8 +364,26 @@ form i,
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
 }
-.upper-con button[type="submit"]:hover {
+
+.upper-con button {
+  margin-top: 1em;
+  height: 2rem;
+  width: 100px;
+  border: none;
+  outline: none;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #00abff;
+  color: white;
+}
+
+.upper-con button:hover {
   opacity: 0.8;
+}
+
+.upper-con button:active {
+  opacity: 1;
 }
 
 .container table {

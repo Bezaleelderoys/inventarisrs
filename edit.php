@@ -8,7 +8,7 @@ if (isset($_POST['update'])) {
     $merk = $_POST['merk'];
     $kondisi = $_POST['kondisi'];
     $jumlah = $_POST['jumlah'];
-    $result = mysqli_query($koneksi, "UPDATE barang SET NAMA_BARANG='$nama', MERK_BARANG='$merk', KONDISI='$kondisi', JUMLAH='$kondisi' WHERE ID_BARANG=$id");
+    $result = mysqli_query($koneksi, "UPDATE barang SET NAMA_BARANG='$nama', MERK_BARANG='$merk', KONDISI='$kondisi', JUMLAH='$jumlah' WHERE ID_BARANG=$id");
 
     header("location: index.php");
 }
@@ -130,13 +130,13 @@ filter: blur(10x);
     <label>Nama</label><a href="inventaris.php" style="float:right;"><i class="bi bi-x-lg"></i></a><br>
     <input type="text" name="nama" value="<?php echo $nama;?>"><br>
     <label>Merk</label><br>
-    <input type="text" name="nama" value="<?php echo $merk;?>"><br>
+    <input type="text" name="merk" value="<?php echo $merk;?>"><br>
     <label>Kondisi</label><br>
-    <input type="text" name="nama" value="<?php echo $kondisi;?>"><br>
+    <input type="text" name="kondisi" value="<?php echo $kondisi;?>"><br>
     <label>Jumlah</label><br>
-    <input type="text" name="nama" value="<?php echo $jumlah;?>"><br>
+    <input type="text" name="jumlah" value="<?php echo $jumlah;?>"><br>
     <label>Jenis</label><br>
-    <input type="text" name="nama" value="<?php echo $jenis;?>"><br>
+    <input type="text" name="jenis" value="<?php echo $jenis;?>"><br>
     <input type="hidden" name="id" value="<?php echo $_GET['ID']; ?>">
     <input type="submit" name="update" value="UPDATE">
 </form>

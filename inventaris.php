@@ -46,16 +46,9 @@ include_once("koneksi.php");
         <div class="upper-con">
             <form action="" method="post" name="form">
                 <input type="text" placeholder="Cari."name="keyword">
-                <button type="submit" name="cari" style="
-                    height: 2rem;
-                    border: none;
-                    outline: none;
-                    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
-                    border-radius: 3px;
-                    cursor: pointer;
-                ">Cari!</button>
+                <button type="submit" name="cari">Cari!</button>
             </form>
-            <a href="edit.php">Tambah</a>
+            <a href="edit.php"><button>Tambah</button></a>
         </div>
         <div class="container">
             <table>
