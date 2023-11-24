@@ -148,8 +148,18 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
             <div class="right-card">
                 <div class="title">
                     <p>Audit</p>
-                    <a href="log.php">Lihat lebih..</a>
+                    <a href="audit.php">Lihat lebih..</a>
                 </div>
+                <table border="0" style="border-collapse: collapse;">
+                <?php
+                    $query = mysqli_query($koneksi, "SELECT * FROM audit ORDER BY date DESC");
+                    while ($data = mysqli_fetch_array($query)) {
+                        echo "<tr>";
+                        echo "<td>" . $data['date'] . "</td>";
+                        echo "<td>" . $data['user'] . "</td>";
+                    }
+                    ?>
+                </table>
             </div>
         </div>
     </div>

@@ -27,12 +27,10 @@ if ($stmt = $koneksi->prepare('SELECT id, password FROM user WHERE username = ?'
             $_SESSION['id'] = $id;
             header('Location: ../index.php');
         } else {
-            // Incorrect password
-            echo 'Incorrect username and/or password!';
+            header('Location: login.php');
         }
     } else {
-        // Incorrect username
-        echo 'Incorrect username and/or password!';
+        header('Location: login.php');
     }
 
 	$stmt->close();
