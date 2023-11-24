@@ -163,6 +163,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
             </div>
         </div>
     </div>
+    <script src="src/script.js"></script>
 </body>
 
 </html>

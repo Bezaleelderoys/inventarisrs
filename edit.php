@@ -107,5 +107,6 @@ filter: blur(10x);
     <input type="hidden" name="id" value="<?php echo $_GET['ID']; ?>">
     <input type="submit" name="update" value="UPDATE">
 </form>
+<script src="src/script.js"></script>
 </body>
 </html>

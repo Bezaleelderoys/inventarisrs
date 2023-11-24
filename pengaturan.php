@@ -25,7 +25,14 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
-
+<style>
+    #darkMode{
+        background-color: white;
+        border: 1px solid rgba(0,0,0,0.2);
+        width: 100px; 
+        height: 20px;     
+    }
+</style>
 <body>
     <div class="navbar">
         <div class="container">
@@ -53,10 +60,14 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
             </div>
         </div>
     </div>
-    <div class="content">
+    <div class="setting">
         <div class="container">
+            <h1>Pengaturan</h1>
+            <h2 style="margin: 0;">Dark Mode</h2>
+            <small>Mengaktifkan mode gelap pada halaman web. Klik tombol kembali untuk mengembalikan ke mode terang.</small><br> 
+            <button id="darkMode">Aktifkan</button>
         </div>
-    </div>
+    </div>    
+    <script src="src/script.js"></script>
 </body>
-
 </html>

@@ -50,8 +50,10 @@ if (!isset($_SESSION['loggedin'])) {
             </div>
         </div>
     </div>\
-    <div class="inventory">
+    <div class="setting">
     <div class="container">
+        <h1 style="margin:0;">Audit Log</h1>
+        <small>Catatan perubahan</small>
         <table>
              <tr>
                 <th>Tanggal & Waktu</th>
@@ -73,6 +75,7 @@ if (!isset($_SESSION['loggedin'])) {
         </table>
     </div>
     </div>
+    <script src="src/script.js"></script>
 </body>
 
 </html>

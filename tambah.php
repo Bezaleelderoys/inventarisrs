@@ -89,5 +89,6 @@ if(isset($_POST['submit'])){
     header("location: inventaris.php");
 }
 ?>
+    <script src="src/script.js"></script>
 </body>
 </html>

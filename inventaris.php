@@ -93,6 +93,7 @@ if (!isset($_SESSION['loggedin'])) {
             </table>
         </div>
     </div>
+    <script src="src/script.js"></script>
 </body>
 
 </html>
