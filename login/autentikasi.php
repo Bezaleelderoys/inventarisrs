@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../koneksi.php");
+include_once("../config/koneksi.php");
 
 if ( !isset($_POST['username'], $_POST['password']) ) {
 	// Could not get the data that should have been sent.

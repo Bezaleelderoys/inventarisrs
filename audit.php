@@ -1,15 +1,12 @@
 <?php
 include_once("config/koneksi.php");
+
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: login/login.php');
 	exit;
 }
-
-
-$query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
-
 ?>
 
 <!DOCTYPE html>
@@ -47,15 +44,34 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
             <div class="nav">
                 <a href="index.php"><i class="bi bi-house-door-fill"></i> Beranda</a>
                 <a href="inventaris.php"><i class="bi bi-backpack-fill"></i> Inventaris</a>
-                <a href="audit.php"><i class="bi bi-book-fill"></i> Audit</a>
-                <a href="pengaturan.php" style="opacity: 1;"><i class="bi bi-gear-fill" style="color: #713bdb;"></i> Pengaturan</a>
+                <a href="#" style="opacity: 1;"><i class="bi bi-book-fill" style="color: #713bdb;"></i> Audit</a>
+                <a href="pengaturan.php"><i class="bi bi-gear-fill"></i> Pengaturan</a>
                 <a href="login/logout.php"><i class="bi bi-box-arrow-left"></i> Log Out</a>
             </div>
         </div>
+    </div>\
+    <div class="inventory">
+    <div class="container">
+        <table>
+             <tr>
+                <th>Tanggal & Waktu</th>
+                <th>Pengguna</th>
+                <th>Tipe Aktivitas</th>
+                <th>Tindakan</th>
+            </tr>
+            <?php
+                $query = mysqli_query($koneksi, "SELECT * FROM audit ORDER BY date DESC");
+                while ($data = mysqli_fetch_array($query)){
+                    echo "<tr>";
+                    echo "<td>".$data['date']."</td>";
+                    echo "<td>".$data['user']."</td>";
+                    echo "<td>".$data['type']."</td>";
+                    echo "<td>".$data['action']."</td>";
+                    echo "</tr>";
+                }
+                ?>
+        </table>
     </div>
-    <div class="content">
-        <div class="container">
-        </div>
     </div>
 </body>
 

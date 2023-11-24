@@ -8,7 +8,12 @@ if (!isset($_SESSION['loggedin'])) {
 }
 
 
-include_once("koneksi.php");
+include_once("config/koneksi.php");
+
+date_default_timezone_set("Asia/Singapore");
+
+$user = $_SESSION['name'];
+$date = date('m/d/Y h:i:s a', time());
 
 if (isset($_POST['update'])) {
     $nama = $_POST['nama'];
@@ -16,8 +21,13 @@ if (isset($_POST['update'])) {
     $kondisi = $_POST['kondisi'];
     $jumlah = $_POST['jumlah'];
     $result = mysqli_query($koneksi, "UPDATE barang SET NAMA_BARANG='$nama', MERK_BARANG='$merk', KONDISI='$kondisi', JUMLAH='$jumlah' WHERE ID_BARANG=$id");
+    
+    // buat audit log
+    $type = "Edit";
+    $act = "Mengedit data ".$nama." dengan ID ".$id;
+    $insert = mysqli_query($koneksi, "INSERT INTO audit (date,user,type,action) VALUES ('$date','$user','$type','$act')");
 
-    header("location: index.php");
+    header("location: inventaris.php");
 }
  
 ?>

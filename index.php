@@ -1,5 +1,5 @@
 <?php
-include_once("koneksi.php");
+include_once("config/koneksi.php");
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
@@ -34,7 +34,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
             <div class="social">
                 <a href="#"><i class="bi bi-bell-fill" id="bell"></i></a>
                 <img src="img/profile.jpg" alt="">
-                <a href="#"><?php echo $_SESSION['name'] ;?><i class="bi bi-chevron-down"></i></a>
+                <a href="#"><?php echo $_SESSION['name'] ;?> <i class="bi bi-chevron-down"></i></a>
             </div>
         </div>
     </div>
@@ -47,10 +47,10 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
                 <a href="#" style="opacity: 1;"><i class="bi bi-house-door-fill" style="color: #713bdb;"></i>
                     Beranda</a>
                 <a href="inventaris.php"><i class="bi bi-backpack-fill"></i> Inventaris</a>
-                <a href="log.php"><i class="bi bi-book-fill"></i> Log</a>
+                <a href="audit.php"><i class="bi bi-book-fill"></i> Audit</a>
                 <a href="pengaturan.php"><i class="bi bi-gear-fill"></i> Pengaturan</a>
+                <a href="login/logout.php"><i class="bi bi-box-arrow-left"></i> Log Out</a>
             </div>
-            <a href="login/logout.php">Log Out</a>
         </div>
     </div>
     <div class="content">
@@ -60,7 +60,13 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
                     <i class="bi bi-archive-fill"></i>
                 </div>
                 <div class="text-box">
-                    <h2>2505</h2>
+                    <h2>
+                        <?php
+                            $result = mysqli_query($koneksi, "SELECT * FROM barang");
+                            $totalCount = mysqli_num_rows($result);
+                            echo $totalCount;
+                        ?>
+                    </h2>
                     <p>Total Barang</p>
                 </div>
             </div>
@@ -69,8 +75,14 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
                     <i class="bi bi-archive-fill"></i>
                 </div>
                 <div class="text-box">
-                    <h2>2505</h2>
-                    <p>Total Barang</p>
+                    <h2>
+                        <?php
+                            $result = mysqli_query($koneksi, "SELECT * FROM barang WHERE JENIS_BARANG = 'MEDIS'");
+                            $totalCount = mysqli_num_rows($result);
+                            echo $totalCount;
+                        ?>
+                    </h2>
+                    <p>Total Medis</p>
                 </div>
             </div>
             <div class="card">
@@ -78,8 +90,14 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
                     <i class="bi bi-archive-fill"></i>
                 </div>
                 <div class="text-box">
-                    <h2>2505</h2>
-                    <p>Total Barang</p>
+                    <h2>
+                        <?php
+                            $result = mysqli_query($koneksi, "SELECT * FROM barang WHERE JENIS_BARANG = 'NON MEDIS'");
+                            $totalCount = mysqli_num_rows($result);
+                            echo $totalCount;
+                        ?>
+                    </h2>
+                    <p>Total Nonmedis</p>
                 </div>
             </div>
             <div class="card">
@@ -87,8 +105,14 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
                     <i class="bi bi-archive-fill"></i>
                 </div>
                 <div class="text-box">
-                    <h2>2505</h2>
-                    <p>Total Barang</p>
+                    <h2>
+                        <?php
+                            $result = mysqli_query($koneksi, "SELECT * FROM barang WHERE KONDISI = 'BURUK'");
+                            $totalCount = mysqli_num_rows($result);
+                            echo $totalCount;
+                        ?>
+                    </h2>
+                    <p>Total Buruk</p>
                 </div>
             </div>
         </div>
@@ -123,7 +147,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
             </div>
             <div class="right-card">
                 <div class="title">
-                    <p>Log</p>
+                    <p>Audit</p>
                     <a href="log.php">Lihat lebih..</a>
                 </div>
             </div>

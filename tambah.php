@@ -1,5 +1,5 @@
 <?php
-include_once("koneksi.php");
+include_once("config/koneksi.php");
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
@@ -68,6 +68,11 @@ filter: blur(10x);
     <input type="submit" name="submit" value="TAMBAH">
 </form>
 <?php
+date_default_timezone_set("Asia/Singapore");
+
+$user = $_SESSION['name'];
+$date = date('m/d/Y h:i:s a', time());
+
 if(isset($_POST['submit'])){
     $nama = $_POST['nama'];
     $merk = $_POST['merk'];
@@ -75,7 +80,13 @@ if(isset($_POST['submit'])){
     $jumlah = $_POST['jumlah'];
     $jenis = $_POST['jenis'];
 
+    // buat audit log
+    $type = "Create";
+    $act = "Menambah data ".$nama;
+    $insert = mysqli_query($koneksi, "INSERT INTO audit (date,user,type,action) VALUES ('$date','$user','$type','$act')");
+
     $result = mysqli_query($koneksi, "INSERT INTO barang (NAMA_BARANG,MERK_BARANG,JENIS_BARANG,KONDISI,JUMLAH) VALUES('$nama','$merk','$jenis','$kondisi','$jumlah')");
+    header("location: inventaris.php");
 }
 ?>
 </body>

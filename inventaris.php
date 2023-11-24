@@ -1,5 +1,5 @@
 <?php
-include_once("koneksi.php");
+include_once("config/koneksi.php");
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
@@ -44,8 +44,9 @@ if (!isset($_SESSION['loggedin'])) {
             <div class="nav">
                 <a href="index.php"><i class="bi bi-house-door-fill"></i> Beranda</a>
                 <a href="inventaris.php" style="opacity: 1;"><i class="bi bi-backpack-fill" style="color: #713bdb;"></i>Inventaris</a>
-                <a href="log.php"><i class="bi bi-book-fill"></i> Log</a>
+                <a href="audit.php"><i class="bi bi-book-fill"></i> Audit</a>
                 <a href="pengaturan.php"><i class="bi bi-gear-fill"></i> Pengaturan</a>
+                <a href="login/logout.php"><i class="bi bi-box-arrow-left"></i> Log Out</a>
             </div>
         </div>
     </div>
