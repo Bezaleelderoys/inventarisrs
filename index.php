@@ -1,8 +1,11 @@
 <?php
 include_once("koneksi.php");
-ob_start();
 session_start();
-if(!isset($_SESSION['akun_id'])) header("location: login.php");
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: login/login.php');
+	exit;
+}
 
 $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
 
@@ -31,7 +34,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
             <div class="social">
                 <a href="#"><i class="bi bi-bell-fill" id="bell"></i></a>
                 <img src="img/profile.jpg" alt="">
-                <a href="#"> Admin <i class="bi bi-chevron-down"></i></a>
+                <a href="#"><?php echo $_SESSION['name'] ;?><i class="bi bi-chevron-down"></i></a>
             </div>
         </div>
     </div>
@@ -47,6 +50,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM barang LIMIT 6");
                 <a href="log.php"><i class="bi bi-book-fill"></i> Log</a>
                 <a href="pengaturan.php"><i class="bi bi-gear-fill"></i> Pengaturan</a>
             </div>
+            <a href="login/logout.php">Log Out</a>
         </div>
     </div>
     <div class="content">

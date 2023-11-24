@@ -1,5 +1,12 @@
 <?php
 include_once("koneksi.php");
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: login/login.php');
+	exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +32,7 @@ include_once("koneksi.php");
             <div class="social">
                 <a href="#"><i class="bi bi-bell-fill" id="bell"></i></a>
                 <img src="img/profile.jpg" alt="">
-                <a href="#"> Admin <i class="bi bi-chevron-down"></i></a>
+                <a href="#"><?php echo $_SESSION['name'] ;?> <i class="bi bi-chevron-down"></i></a>
             </div>
         </div>
     </div>

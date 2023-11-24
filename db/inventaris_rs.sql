@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2023 at 04:47 PM
+-- Generation Time: Nov 24, 2023 at 04:17 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -64,16 +64,19 @@ INSERT INTO `barang` (`ID_BARANG`, `NAMA_BARANG`, `MERK_BARANG`, `JENIS_BARANG`,
 --
 
 CREATE TABLE `user` (
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`) VALUES
-('admin', 'admin');
+INSERT INTO `user` (`id`, `username`, `password`, `email`) VALUES
+(1, 'admin', 'admin', 'test@test.com'),
+(2, 'tugus', 'tugus', 'tugus@test.com');
 
 --
 -- Indexes for dumped tables
@@ -86,6 +89,12 @@ ALTER TABLE `barang`
   ADD PRIMARY KEY (`ID_BARANG`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -94,6 +103,12 @@ ALTER TABLE `barang`
 --
 ALTER TABLE `barang`
   MODIFY `ID_BARANG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
