@@ -2,5 +2,5 @@
 
 Tugas Akhir Pemrograman Web Dan Perangkat Bergerak
 
-user : admin pass : admin
-user : tugus pass : tugus
+- user : admin pass : admin
+- user : tugus pass : tugus
